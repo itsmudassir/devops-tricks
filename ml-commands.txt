@@ -1,0 +1,125 @@
+
+Run Python on startup : https://www.raspberrypi-spy.co.uk/2015/10/how-to-autorun-a-python-script-on-boot-using-systemd/
+
+
+
+05 4 * * * pkill -f '/home/dell/anaconda3/envs/py37/bin/python /home/dell/Documents/rssToContent/dwRssContent.py'
+
+00 16 * * * echo pta123 | sudo -S reboot
+
+
+
+anaconda :=>    export PATH=~/anaconda3/bin:$PATH  and then :-> conda init
+
+
+
+
+runBASH  chmod u+x job.sh  and then ./job.sh
+
+install ChromeDriver : download from here https://chromedriver.chromium.org/downloads
+unzip
+make exe: sudo chmod +x chromedriver
+sudo mv chromedriver /usr/local/bin/
+
+
+
+
+Screen commands
+ctrl A ctrl D  # to detatch
+screen -r to reattatch 
+screen -ls to list more than 1 screens  then use screen id 
+
+
+
+nvidia-smi
+sudo kill -9 pid
+
+
+
+# fix jupyter :  pip install --upgrade ipykernel
+path to Conda  add this to bashrc :  export PATH=~/anaconda3/bin:$PATH
+
+conda env list
+conda list //list all packages
+conda create --name myclone --clone myenv
+
+pip install -r requirements.txt
+
+conda remove --name tf1gpu --all
+
+conda create --name tf_gpu tensorflow-gpu 
+
+conda create -n myenv python=3.6
+
+ env1/bin/pip freeze > requirements.txt
+
+env2/bin/pip install -r requirements.txt
+
+python3 -c 'import tensorflow as tf; print(tf.__version__)'  # for Python 3
+
+
+import tensorflow as tf
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+
+
+import warnings
+warnings.filterwarnings('ignore')
+
+install keras 2.2.0 or the version comeptible with tf1.1.0
+
+tf.test.is_gpu_available(
+    cuda_only=False,
+    min_cuda_compute_capability=None
+)
+
+
+
+git add .
+git status to check 
+git commit -m ""
+git push 
+git push -f origin master //if above fails
+
+//if u commit on large unnecesary files and want to remove them as you have commited them 
+git rm --cached -r .
+git reset HEAD -- .
+
+ git reflog  //show all comit history
+
+make a wront commit get a previous commit id from above command 
+git reset --hard 98d3581 //take u to older commit 
+
+
+
+
+
+
+
+google-drive-ocamlfuse ~/google-drive
+
+ls -l | grep "^d" | wc -l
+
+
+dell monitor Lemovo Commands on deafuld ubuntu 20 driver
+xrandr --newmode "1920x1080_60.00"  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
+xrandr --addmode DP-2 1920x1080_60.00
+------------ end of lenovo comand ----------------------------
+
+dell monitor gt70 Commands on Nvidia 340 driver ubuntu 20 driver
+xrandr // get display name
+xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync 
+xrandr --addmode VGA-1-1 1920x1080
+
+nano ~/.xprofile
+put in file above :
+#!/bin/sh
+xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync 
+xrandr --addmode VGA-1-1 1920x1080
+
+
+
+------------ end of gt70 comand ----------------------------
+
+
+sudo systemctl start elasticsearch
+sudo systemctl start kibana
