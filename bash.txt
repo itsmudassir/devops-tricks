@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+
+
+---------------crinjobs -------------------
+#30 * * * * /home/hp/anaconda3/bin/python /home/hp/Documents/ji/changeip.py
+#56 * * * * echo password | sudo -S reboot
+
+#58 * * * *  pkill -f '/home/hp/anaconda3/bin/python /home/hp/Documents/ji/telemart.py'
+#59 * * * *  DISPLAY=:0 /home/hp/anaconda3/bin/python /home/hp/Documents/ji/telemart.py
+#58 * * * * pkill chrome
+
