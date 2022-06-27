@@ -1,4 +1,8 @@
 
+elastic pythob version that works with bonsai  pip install elasticsearch==7.13.0
+
+
+
 Run Python on startup : https://www.raspberrypi-spy.co.uk/2015/10/how-to-autorun-a-python-script-on-boot-using-systemd/
 
 
