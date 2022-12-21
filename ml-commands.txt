@@ -26,7 +26,14 @@ make exe: sudo chmod +x chromedriver
 sudo mv chromedriver /usr/local/bin/
 
 
+Tmux screen comands
+sudo apt-get install tmux
+tmux /start new
+tmux ls to show all 
+tmux a -t0  / to attatch to 0 screen
 
+
+https://www.linkedin.com/pulse/how-i-run-days-long-scripts-without-breaking-them-arun-das/
 
 Screen commands
 ctrl A ctrl D  # to detatch
